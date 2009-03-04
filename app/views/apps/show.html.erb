@@ -1,6 +1,6 @@
 <h1><%= @app.title %></h1>
-<p><%= link_to 'iTunes', @app.app_store_url %></p>
-<p><%= @app.description %></p>
+<p><%= link_to 'Go to iTunes >', @app.app_store_url %></p>
+<p><%= textilize(@app.description) %></p>
 
 <p><%= link_to "Edit #{@app.title}", edit_app_path(@app)%></p>
 <p><%= link_to "Delete #{@app.title}", app_path(@app), :method => :delete %></p>
@@ -11,3 +11,5 @@
 <% @app.versions.each do |version| -%>
   <p><%= link_to "Version #{version.number}", app_version_path(@app, version) %></p>
 <% end -%>
+
+<%= link_to 'New version', new_app_version_path(@app) %>

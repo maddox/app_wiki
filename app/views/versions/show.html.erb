@@ -1,7 +1,7 @@
 <h1><%= "#{@app.title} #{@version.number}" %></h1>
 
 <h3>Release Notes</h3>
-<p><%= @version.release_notes %></p>
+<p><%= textilize(@version.release_notes) %></p>
 
 <p><%= link_to "Edit this version", edit_app_version_path(@app, @version)%></p>
 <p><%= link_to "Delete this version", app_version_path(@app, @version), :method => :delete %></p>
