@@ -1,0 +1,22 @@
+<h1><%= "#{@app.title} #{@version.number}" %></h1>
+
+<h3>Release Notes</h3>
+<p><%= @version.release_notes %></p>
+
+<p><%= link_to "Edit this version", edit_app_version_path(@app, @version)%></p>
+<p><%= link_to "Delete this version", app_version_path(@app, @version), :method => :delete %></p>
+<p><%= link_to "< Back to #{@app.title}", app_path(@app)%></p>
+
+
+<h2>Screenshots</h2>
+
+<div id="screenshots">
+  <% @version.screenshots.each do |screenshot| -%>
+    <%= link_to image_tag(screenshot.public_filename(:thumb)), screenshot.public_filename %> 
+
+    <%= link_to "(remove)", version_screenshot_path(@version, screenshot), :confirm => "Are you sure you want to remove this screenshot?", :method => :delete %>
+
+  <% end -%>
+
+  <%= render :partial => "screenshots/form"%>
+</div>

@@ -1,0 +1,8 @@
+<h3>Add a screenshot</h3>
+
+<% form_for([@version, @screenshot], :html => {:multipart => true}) do |f| %>
+	<p><label>File</label><br />
+		<%= f.file_field :uploaded_data %></p>
+	<%= submit_tag 'Upload' %>
+<% end %>
+

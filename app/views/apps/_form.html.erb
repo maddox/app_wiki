@@ -1,0 +1,15 @@
+<% form_for @app do |f| -%>
+  <%= f.error_messages %>
+
+  <p><%= f.label :title %> <br />
+    <%= f.text_field :title %></p>
+
+    <p><%= f.label :app_store_url %> <br />
+      <%= f.text_field :app_store_url %></p>
+
+  <p><%= f.label :description %> <br />
+    <%= f.text_area :description %></p>
+
+  
+  <p><%= form_model_buttons @app %></p>
+<% end -%>

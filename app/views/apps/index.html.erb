@@ -1,0 +1,7 @@
+<h1>Apps</h1>
+<% @apps.each do |app| -%>
+<p><%= link_to app.title, app_path(app) %></p>
+<% end -%>
+
+
+<%= link_to 'New app', new_app_path %>
